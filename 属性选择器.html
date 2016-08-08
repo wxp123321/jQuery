@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>属性选择器.html</title>
+	
+    <meta http-equiv="keywords" content="keyword1,keyword2,keyword3">
+    <meta http-equiv="description" content="this is my page">
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    
+    <!--<link rel="stylesheet" type="text/css" href="./styles.css">-->
+	<script type="text/javascript" src="jquery-1.11.1.min.js"></script>
+	<script type="text/javascript">
+		$(document).ready(function(){
+			//属性选择器
+			//$("a[href]").css("color","red");
+			
+			//[attr=value]
+			//$("a[href='http://web.itcast.cn']").css("font-size","40px");
+			
+			//[attr!=value]
+			//$("a[href!='http']").css("font-size","40px");
+			
+			//[attr^=value]   以什么开头
+			//$("a[href^='http']").css("font-size","40px");
+			
+			//[attr$=value]   以什么结尾
+			//$("a[href$='cn']").css("font-size","40px");
+			
+			//[attr*=value]  包含什么
+			//$("a[href*='it']").css("font-size","40px");
+			
+			
+			//[attr][attr]  都满足的交集
+			//$("a[href][title*='的']")css("font-size","40px");
+			
+		
+		});
+	</script>
+  </head>
+  
+  <body>
+    <div>
+    	<a href="www.baidu.com" title="谁啊？">百度</a>
+        <a href="http://web.itcast.cn" title="我是title的内容">前端移动</a>
+        <a href="http://sina.com.cn">新浪</a>
+        <a>我没有href</a>
+    </div>
+  </body>
+</html>
