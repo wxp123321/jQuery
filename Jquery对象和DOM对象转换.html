@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Jquery对象和DOM对象转换.html</title>
+	
+    <meta http-equiv="keywords" content="keyword1,keyword2,keyword3">
+    <meta http-equiv="description" content="this is my page">
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <style type="text/css">
+    	div
+    	{
+    		height: 200px;
+    		background: #000;
+    	}
+    </style>
+    <script type="text/javascript" src="jquery-1.11.1.min.js"></script>
+    <script type="text/javascript">
+    	$(document).ready(function(){
+    		//DOM对象转换成jQuery对象
+    		/*
+    		var btn = document.getElementById("btn");
+    		$(btn).click(function(){
+    			$("div").hide();
+    		});
+    		*/
+    	
+    		//jQuery对象转换成DOM对象
+    		$("button").get(0).onclick = function()
+    		{
+    			alert("jQuery对象转换成DOM对象");
+    		}
+    	
+    		//jQuery里的click方法，点击触发click事件
+    		//js里面的onclick是绑定点击事件
+    		var btn = document.getElementById("btn");
+    		btn.onclick = function()
+    		{
+    			alert("我是btn的onclick");
+    		}
+    		btn.click();
+    	
+    	
+    	
+    	
+    	
+    	
+    	
+    	});
+    </script>
+    <!--<link rel="stylesheet" type="text/css" href="./styles.css">-->
+
+  </head>
+  
+  <body>
+    <button id="btn">我是阿牛</button>
+    <button>我是阿妹</button>
+    <div></div>
+  </body>
+</html>

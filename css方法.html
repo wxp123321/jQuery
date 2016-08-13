@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>css方法.html</title>
+	
+    <meta http-equiv="keywords" content="keyword1,keyword2,keyword3">
+    <meta http-equiv="description" content="this is my page">
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <style>
+    	li
+    	{
+    		font-size: 20px;
+    	}
+    </style>
+    <!--<link rel="stylesheet" type="text/css" href="./styles.css">-->
+    <script type="text/javascript" src="jquery-1.11.1min.js"></script>
+	<script type="text/javascript">
+		$(document).ready(function(){
+			//获取css
+			//$("li").css("font-size");
+			
+			//设置样式
+			//$("li").css("background-color","red");
+			
+			//设置多个样式
+			/*
+				$("li").css({
+					"background-color": "red",
+					"font-size": "20px",
+					"color": "white" 
+				});
+			*/
+			
+			$("li").css("background-color",function(index,value){
+				//index：指定当前元素的索引号
+				//value：表示当前元素要设置的样式，此处指： background-color
+				//return (i + 1) * 10 + "px";
+				
+				//只设置第三个
+				if(index == 2)
+				{
+					return (index + 1) * parseInt(value) + "px";
+				}
+			});		
+		})
+	</script>
+  </head>
+  
+  <body>
+    <ul>
+    	<li>我是li元素</li>
+    	<li>我是li元素</li>
+    	<li>我是li元素</li>
+    	<li>我是li元素</li>
+    </ul>
+  </body>
+</html>
