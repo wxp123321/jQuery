@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>五角星评论案例.html</title>
+	
+    <meta http-equiv="keywords" content="keyword1,keyword2,keyword3">
+    <meta http-equiv="description" content="this is my page">
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <style type="text/css">
+    	*{margin:0;padding:0;}
+    	.comment
+    	{
+    		font-size: 40px;
+    		color: teal;
+    	}
+    	.comment li
+    	{
+    		float: left;
+    	}
+    	ul
+    	{
+    		list-style: none;
+    	}
+    </style>
+    <script type="text/javascript" src="jquery-1.11.1.min.js"></script>
+    <script type="text/javascript">
+    	$(function(){
+    		var wjx_none = "☆";
+    		var wjx_sel = "★";
+    		$(".comment li").mouseenter(function(){
+    			//鼠标移入 自己和前面的变实心 其他变空心
+    			$(this).text(wjx_sel).prevAll().text(wjx_sel).end().nextAll().text(wjx_none);
+    		}).click(function(){
+    			//鼠标点击后，把自己添加clicked类，其余的清除clicked类
+    			$(this).addClass("clicked").siblings().removeClass("clicked");
+    		});
+    			//当鼠标移开星星 实心显示到被点击的五角星上
+    			$(".comment").mouseleave(function(){
+    				$(".comment li").text(wjx_none);
+    				
+    				$(".clicked").text(wjx_sel).prevAll().text(wjx_sel).end().nextAll().text(wjx_none);
+    			});
+    			
+    	});
+    </script>
+    <!--<link rel="stylesheet" type="text/css" href="./styles.css">-->
+
+  </head>
+  
+  <body>
+    <ul class="comment">
+		<li>☆</li>
+		<li>☆</li>
+		<li>☆</li>
+		<li>☆</li>
+		<li>☆</li>
+	</ul>
+  </body>
+</html>

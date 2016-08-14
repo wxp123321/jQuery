@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>jQueryUI.html</title>
+	
+    <meta http-equiv="keywords" content="keyword1,keyword2,keyword3">
+    <meta http-equiv="description" content="this is my page">
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <link rel="stylesheet" href="jQueryUI/jquery-ui.min.css">
+	<script src="jquery-1.11.1.min.js"></script>
+	<script src="jQueryUI/jquery-ui.min.js"></script>
+    <script type="text/javascript">
+    	jQuery(document).ready(function($){
+    		$(".tab").tabs();
+    		$("#J_btn_openDialog").click(function(){
+    			$(".dialog").dialog();
+    		});
+    	});
+    </script>
+    <!--<link rel="stylesheet" type="text/css" href="./styles.css">-->
+
+  </head>
+  
+  <body>
+    <div class="tab">
+    	<ul>
+    		<li><a href="#tab-1">页签1</a></li>
+    		<li><a href="#tab-2">页签2</a></li>
+    		<li><a href="#tab-3">页签3</a></li>
+    	</ul>
+    	<div id="tab-1">div内容1</div>
+    	<div id="tab-2">div内容2</div>
+    	<div id="tab-3">div内容3</div>
+    </div>
+    	<input type="button" value="open dialog" id="J_btn_openDialog">
+
+
+		<div class="dialog" title="传智播客-uidiaolog">
+			这里是船实得分了解了束带结发粮食局的发了塑料袋附件是
+			<br>		
+			<br>		
+			<br>		
+			<br>		
+			这里是船实得分了解了束带结发粮食局的发了塑料袋附件是
+		</div>
+    
+  </body>
+</html>

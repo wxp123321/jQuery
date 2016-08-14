@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>坐标值.html</title>
+	
+    <meta http-equiv="keywords" content="keyword1,keyword2,keyword3">
+    <meta http-equiv="description" content="this is my page">
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <style>
+    	*
+    	{
+    		margin:0;
+    		padding: 0;
+    	}
+    	div
+    	{
+    		position: absolute;
+    		top: 100px;
+    		left: 200px;
+    		width: 400px;
+    		height: 300px;
+    		background-color: #000000;
+    	}
+    	p
+    	{
+    		background: #666;
+    		position: absolute;
+    		top: 80px;
+    		left: 90px;
+    	}
+  	</style>
+    <!--<link rel="stylesheet" type="text/css" href="./styles.css">-->
+	<script type="text/javascript" src="jquery-1.11.1.min.js"></script>
+	<script type="text/javascript">
+		$(document).ready(function(){
+			//获取offset坐标值
+			$("#btn1").click(function(){
+				console.log("距离页面上部的距离:"+$("div").offset().top);
+				console.log("距离页面左边的距离:"+$("div").offset().left);
+			});
+			
+			//获取相对于父元素的位置
+			$("#btn2").click(function(){
+				console.log("相对于父元素上部的距离："+$("p").position().top);
+				console.log("相对于父元素左边的距离："+$("p").position().left);
+			});
+			
+			//设置offset
+			$("#btn3").click(function(){
+				var txtTop = $("#txtTop").val();
+				var txtLeft = $("#txtLeft").val();
+				
+				$("div").offset({
+					top: txtTop,
+					left: txtLeft
+				});
+			});
+			
+			
+			
+			
+			
+		});
+	</script>
+  </head>
+  
+  <body>
+    <button id="btn1">获取offset坐标值</button>
+    <button id="btn2">获取position坐标值</button>
+    <button id="btn3">设置position坐标值</button>
+    <label for="txtTop">top:</label><input type="text" id="txtTop">
+    <label for="txtLeft">top:</label><input type="text" id="txtLeft">
+    <div>
+    	<p>我是div的子元素</p>
+    </div>
+  </body>
+</html>

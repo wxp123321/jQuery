@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>JqueryData.html</title>
+	
+    <meta http-equiv="keywords" content="keyword1,keyword2,keyword3">
+    <meta http-equiv="description" content="this is my page">
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <style>
+    	.demo
+    	{
+    		height: 400px;
+			width: 400px;
+			border: 1px solid #000;
+    	}
+    </style>
+    <script type="text/javascript" src="jquery-1.11.1.min.js"></script>
+    <script type="text/javascript">
+    	$(function(){
+    		$(".demo").data("name",123)
+    							.data("2",123555)
+    							.data("key",{
+    								"userId": 1900,
+    								"userName": "itcast"
+    							});
+    		$("#J_btn").on("click",function(){
+    			
+				// $(".demo").text($(".demo").data("2"));
+    			$(".demo").text($(".demo").data("key").userId);
+    		});
+    	});
+    </script>
+    <!--<link rel="stylesheet" type="text/css" href="./styles.css">-->
+
+  </head>
+  
+  <body>
+    <input type="button" value="获取data" id="J_btn">
+    <div class="demo"></div>
+  </body>
+</html>

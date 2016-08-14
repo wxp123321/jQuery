@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>jQuery事件对象.html</title>
+	
+    <meta http-equiv="keywords" content="keyword1,keyword2,keyword3">
+    <meta http-equiv="description" content="this is my page">
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <style>
+    	div
+    	{
+    		height: 200px;
+    		width: 400px;
+    		background-color: pink;
+    	}
+    </style>
+    <script type="text/javascript" src="jquery-1.11.1.min.js"></script>
+    <script type="text/javascript">
+    	$(document).ready(function(){
+    		$("#link").on("click",function(e){
+    			//取消默认行为
+    			e.preventDefault();
+    			
+    			//取消冒泡
+    			e.stopPropagation();
+    			
+    			//输出进行了鼠标什么操作 左1 中2 右3
+    			console.log(e.which);
+    			
+    		});
+    		
+    		$("div").on("click",function(e){
+    			//alert("点击了div");
+    			//事件类型  click dbclick
+    			console.log(e.type);
+    			//判断用户点击的是div还是a标签
+    			if(e.target === this)
+    			{
+    				console.log();
+    			}
+    		});
+    		
+    		$(window).keydown(function(e){
+    			//输出键盘字母的编码
+    			console.log(e.keyCode);
+    		});
+    		
+    		
+    		
+    		
+    		
+    		
+    		
+    		
+    		
+    		
+    		
+    		
+    		
+    		
+    		
+    		
+    		
+    		
+    	});
+    </script>
+    <!--<link rel="stylesheet" type="text/css" href="./styles.css">-->
+
+  </head>
+  
+  <body>
+  	<div>
+  		<a id="link" href="http://web.itcast.cn">前端学院</a>
+  	</div>
+  </body>
+</html>
