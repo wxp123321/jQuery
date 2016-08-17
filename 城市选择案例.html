@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>城市选择案例.html</title>
+	
+    <meta http-equiv="keywords" content="keyword1,keyword2,keyword3">
+    <meta http-equiv="description" content="this is my page">
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <style type="text/css" media="screen">
+    	select
+    	{
+    		width: 200px;
+    		height: 200px;
+    		background-color: teal;
+    		font-size: 20px;   		
+    	}
+    	.btn-box
+    	{
+    		width: 30px;
+    		display: inline-block;
+    		vertical-align: top;
+    	}
+    </style>
+	<script type="text/javascript" src="jquery-1.11.1.min.js"></script>
+	<script type="text/javascript">
+		$(document).ready(function(){
+			$("#btn-sel-all").on("click",function(){
+				$("#src-city option").appendTo("#tar-city")
+							
+			});
+			$("#btn-sel-none").on("click",function(){
+				$("#tar-city option").appendTo("#src-city")
+							
+			});
+			$("#btn-sel").on("click",function(){
+				$("#src-city option:selected").appendTo("#tar-city")
+							
+			});
+			$("#btn-back").on("click",function(){
+				$("#tar-city option:selected").appendTo("#src-city")
+							
+			});	
+		});
+	</script>
+  </head>
+  
+  <body>
+    <select id="src-city" name="src-city" multiple>
+    	<option value="1">北京</option>
+    	<option value="2">上海</option>
+    	<option value="3">深圳</option>
+    	<option value="4">广州</option>
+    	<option value="5">西红柿</option>
+    </select>
+	<div class="btn-box">
+		<button id="btn-sel-all">&gt;&gt;</button>
+		<button id="btn-sel-none">&lt;&lt;</button>
+		<button id="btn-back">&lt;</button>
+		<button id="btn-sel">&gt;</button>
+	</div>
+	<select id="tar-city" name="tar-city" multiple>
+		
+	</select>
+  </body>
+</html>
